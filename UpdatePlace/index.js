@@ -16,14 +16,12 @@ module.exports = function(context, req) {
       db.collection('places').findOneAndUpdate(
         { id: placeId },
         {
-          set: {
-            id: place.id,
-            rating: place.rating,
-            name: place.name,
-            description: place.description,
-            img: place.img,
-            stars: place.stars
-          }
+          id: placeId,
+          rating: place.rating,
+          name: place.name,
+          description: place.description,
+          img: place.img,
+          stars: place.stars
         },
         (err, places) => {
           if (err) throw err;
