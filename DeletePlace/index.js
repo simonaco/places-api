@@ -11,10 +11,10 @@ module.exports = function(context, req) {
     (err, database) => {
       if (err) throw err;
       const db = database.db('admin');
-      let placeId = req.params.name;
+      let placeId = req.params.id;
       db
-        .collection('Puppies')
-        .findOneAndDelete({ name: placeId }, (err, result) => {
+        .collection('places')
+        .findOneAndDelete({ id: placeId }, (err, result) => {
           if (err) throw err;
           context.res = {
             status: 200,

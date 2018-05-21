@@ -12,12 +12,12 @@ module.exports = function(context, req) {
       if (err) throw err;
       const db = database.db('admin');
       let place = ({ name, rating, description, img, stars } = req.body);
-      let placeId = req.params.name;
-      db.collection('Puppies').findOneAndUpdate(
-        { name: placeId },
+      let placeId = req.params.id;
+      db.collection('places').findOneAndUpdate(
+        { id: placeId },
         {
           set: {
-            ratin: place.rating,
+            rating: place.rating,
             name: place.name,
             description: place.description,
             img: place.img,
