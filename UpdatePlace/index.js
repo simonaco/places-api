@@ -17,6 +17,7 @@ module.exports = function(context, req) {
         { id: placeId },
         {
           set: {
+            id: place.id,
             rating: place.rating,
             name: place.name,
             description: place.description,
